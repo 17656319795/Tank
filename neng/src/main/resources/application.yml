@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: tank-battle
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/tank_battle?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&connectionCollation=utf8mb4_general_ci&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  jackson:
+    time-zone: Asia/Shanghai
+
+tankbattle:
+  netty-port: 9001
+  map-width: 960
+  map-height: 640
+  game-duration-seconds: 180
+  target-score: 10
+  respawn-delay-ms: 1500
+  tick-rate-ms: 50
+  room-empty-destroy-seconds: 90
+  reconnect-grace-seconds: 25

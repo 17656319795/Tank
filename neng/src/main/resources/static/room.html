@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>铁甲对决 - 房间</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page-room">
+<main class="shell room-shell">
+    <header class="topbar">
+        <div>
+            <span class="eyebrow">房间预备页</span>
+            <h1 id="roomTitle">加载中...</h1>
+        </div>
+        <div class="topbar-actions">
+            <button id="backLobbyButton" class="ghost-button">返回大厅</button>
+            <button id="enterBattleButton" class="primary-button">进入战场</button>
+        </div>
+    </header>
+
+    <section class="grid-two">
+        <article class="panel info-card">
+            <h2>房间信息</h2>
+            <div id="roomSummary" class="detail-list"></div>
+        </article>
+        <article class="panel info-card">
+            <h2>战前提示</h2>
+            <div class="tips-card">
+                <p>在战场页面中使用 `W/A/S/D` 或方向键移动，`空格` 发射炮弹。</p>
+                <p>房主进入战场后会看到开局按钮；若房主离线，其余玩家也可以继续开局。</p>
+                <p>页面会自动轮询房间状态，方便你先邀请朋友再开战。</p>
+            </div>
+        </article>
+    </section>
+</main>
+<div id="toast" class="toast"></div>
+<script src="/js/app.js"></script>
+<script src="/js/room.js"></script>
+</body>
+</html>

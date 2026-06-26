@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>铁甲对决 - 战场</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page-game">
+<main class="game-shell">
+    <section class="battle-stage">
+        <header class="battle-header">
+            <div>
+                <span class="eyebrow">Tactical Arena</span>
+                <h1 id="battleTitle">连接战场中...</h1>
+            </div>
+            <div class="battle-stats">
+                <span id="statusBadge" class="status-badge">WAITING</span>
+                <span id="timerBadge" class="timer-badge">180s</span>
+                <span id="terrainBadge" class="terrain-badge">地形 合金地表</span>
+                <button id="startMatchButton" class="primary-button hidden">开始比赛</button>
+            </div>
+        </header>
+        <canvas id="battleCanvas" width="960" height="640"></canvas>
+        <footer class="battle-footer">
+            <span>操作: `W/A/S/D` 或方向键移动，`Space` 开火，森林会降低移速与可见性，服务端帧同步校准已开启</span>
+            <button id="leaveBattleButton" class="ghost-button">离开战场</button>
+        </footer>
+    </section>
+
+    <aside class="battle-sidebar">
+        <article class="panel compact-panel">
+            <h2>比分面板</h2>
+            <div id="scoreboard" class="scoreboard"></div>
+        </article>
+        <article class="panel compact-panel">
+            <h2>系统播报</h2>
+            <div id="battleLogs" class="battle-logs"></div>
+        </article>
+        <article class="panel compact-panel">
+            <h2>连接状态</h2>
+            <div id="socketState" class="socket-state">等待连接...</div>
+        </article>
+    </aside>
+</main>
+<div id="toast" class="toast"></div>
+<script src="/js/app.js"></script>
+<script src="/js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>铁甲对决 - 登录</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page-auth">
+<main class="shell auth-shell">
+    <section class="hero-card">
+        <span class="eyebrow">Spring Boot + MySQL + Netty</span>
+        <h1>铁甲对决</h1>
+        <p>一个支持房间大厅、排行榜、实时同步和多人坦克混战的小游戏模板。</p>
+        <div class="feature-grid">
+            <article>
+                <strong>房间大厅</strong>
+                <span>创建房间、配置机器人、快速加入、查看战况</span>
+            </article>
+            <article>
+                <strong>实时对战</strong>
+                <span>Netty WebSocket 帧同步、断线重连、机器人混战</span>
+            </article>
+            <article>
+                <strong>玩家成长</strong>
+                <span>MySQL 持久化积分、胜场和排行榜，服务重启需重新登录</span>
+            </article>
+        </div>
+    </section>
+    <section class="panel auth-panel">
+        <div class="tabs">
+            <button class="tab-button is-active" data-tab="login">登录</button>
+            <button class="tab-button" data-tab="register">注册</button>
+        </div>
+        <form id="loginForm" class="form-stack">
+            <label>
+                <span>用户名</span>
+                <input name="username" placeholder="例如 tank_ace" required>
+            </label>
+            <label>
+                <span>密码</span>
+                <input name="password" type="password" placeholder="至少 6 位" required>
+            </label>
+            <button class="primary-button" type="submit">进入大厅</button>
+        </form>
+        <form id="registerForm" class="form-stack hidden">
+            <label>
+                <span>昵称</span>
+                <input name="displayName" placeholder="例如 钢铁指挥官" required>
+            </label>
+            <label>
+                <span>用户名</span>
+                <input name="username" placeholder="例如 tank_ace" required>
+            </label>
+            <label>
+                <span>密码</span>
+                <input name="password" type="password" placeholder="至少 6 位" required>
+            </label>
+            <button class="primary-button" type="submit">注册并登录</button>
+        </form>
+        <p class="muted-note">默认接口是本地 Spring Boot 服务，实时对战通过 `ws://localhost:9001/ws` 建连。</p>
+    </section>
+</main>
+<div id="toast" class="toast"></div>
+<script src="/js/app.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>

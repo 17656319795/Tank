@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>铁甲对决 - 大厅</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page-lobby">
+<main class="shell lobby-shell">
+    <header class="topbar">
+        <div>
+            <span class="eyebrow">多人大厅</span>
+            <h1>房间控制台</h1>
+        </div>
+        <div class="topbar-actions">
+            <div id="playerCard" class="player-pill"></div>
+            <button id="logoutButton" class="ghost-button">退出登录</button>
+        </div>
+    </header>
+
+    <section class="grid-two">
+        <article class="panel">
+            <h2>创建房间</h2>
+            <form id="createRoomForm" class="form-stack">
+                <label>
+                    <span>房间名称</span>
+                    <input name="roomName" placeholder="例如 周末乱斗场" required>
+                </label>
+                <label>
+                    <span>人数上限</span>
+                    <select name="maxPlayers">
+                        <option value="2">2 人</option>
+                        <option value="3">3 人</option>
+                        <option value="4" selected>4 人</option>
+                    </select>
+                </label>
+                <label>
+                    <span>机器人数量</span>
+                    <select name="botCount">
+                        <option value="0" selected>0 个</option>
+                        <option value="1">1 个</option>
+                        <option value="2">2 个</option>
+                        <option value="3">3 个</option>
+                    </select>
+                </label>
+                <button class="primary-button" type="submit">创建并进入房间</button>
+            </form>
+        </article>
+
+        <article class="panel">
+            <h2>快速加入</h2>
+            <form id="quickJoinForm" class="form-stack">
+                <label>
+                    <span>房间号</span>
+                    <input name="roomCode" placeholder="输入 6 位房间号" required>
+                </label>
+                <button class="secondary-button" type="submit">进入房间</button>
+            </form>
+            <div class="tips-card">
+                <strong>对战规则</strong>
+                <p>房主在至少 2 人入场后可以开局，达到目标分数或倒计时结束时判定胜负。</p>
+            </div>
+        </article>
+    </section>
+
+    <section class="grid-two">
+        <article class="panel">
+            <div class="section-title">
+                <h2>活跃房间</h2>
+                <button id="refreshRoomsButton" class="ghost-button">刷新</button>
+            </div>
+            <div id="roomList" class="room-list"></div>
+        </article>
+
+        <article class="panel">
+            <h2>排行榜</h2>
+            <div id="rankingList" class="ranking-list"></div>
+        </article>
+    </section>
+</main>
+<div id="toast" class="toast"></div>
+<script src="/js/app.js"></script>
+<script src="/js/lobby.js"></script>
+</body>
+</html>
